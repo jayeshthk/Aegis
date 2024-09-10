@@ -67,4 +67,4 @@ For more information, support, or inquiries, please contact us at [jayesh.arkvie
 
 ## LICENSE
 
-MIT - !(LICENSE)
+MIT - [LICENSE](LICENSE)

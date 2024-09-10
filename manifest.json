@@ -17,5 +17,10 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": "./aegis.png"
+  },
+  "icons": {
+    "16": "aegis.png",
+    "48": "aegis.png",
+    "128": "aegis.png"
   }
 }

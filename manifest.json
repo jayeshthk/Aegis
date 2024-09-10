@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Aegis",
+  "version": "1.0",
+  "description": "Obfuscates email addresses in real-time and reflects them back on demand.",
+  "permissions": ["activeTab", "scripting", "storage", "webNavigation"],
+  "host_permissions": ["*://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "./aegis.png"
+  }
+}

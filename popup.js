@@ -43,7 +43,7 @@ const obfuscateText = (text) => {
 
 document.getElementById("obfuscateButton").addEventListener("click", () => {
   const inputText = document.getElementById("inputText").value;
-  const obfuscatedText = obfuscateTextX(obfuscateText(inputText));
+  const obfuscatedText = advancedObfuscateText(obfuscateText(inputText));
   document.getElementById("inputText").value = obfuscatedText;
   document.getElementById("copyButton").disabled = false; // Enable copy button
   document.getElementById("status").classList.remove("show"); // Hide status initially
@@ -61,7 +61,7 @@ document.getElementById("copyButton").addEventListener("click", () => {
   document.getElementById("copyButton").disabled = true;
 });
 
-const obfuscateTextX = (text) => {
+const advancedObfuscateText = (text) => {
   // Obfuscate email addresses
   const obfuscateEmail = (email) => {
     const [localPart, domain] = email.split("@");

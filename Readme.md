@@ -1,3 +1,14 @@
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Features](#features)
+3. [How to Use](#how-to-use)
+4. [Future Enhancements](#future-enhancements)
+5. [Privacy and Security](#privacy-and-security)
+6. [Contribution and Feedback](#contribution-and-feedback)
+7. [Contact](#contact)
+8. [License](#license)
+
 # Aegis Chrome Extension
 
 <p align="center"> <img src="./aegis.png" alt="Aegis Logo" width="200" /> </p>
@@ -15,6 +26,8 @@
   - Credit Card Numbers
   - Social Security Numbers (SSNs)
   - IP Addresses
+  - Names
+  - Places
   - Dates
 
 - **User-Friendly Interface**:

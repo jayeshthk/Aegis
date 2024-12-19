@@ -24,7 +24,13 @@ const obfuscateText = (text) => {
   obfuscated = obfuscated.replace(/\b\d{3}-\d{2}-\d{4}\b/g, (match) => {
     return match.replace(/\d/g, "*"); // Simple obfuscation
   });
-
+  // Obfuscate URLs
+  obfuscated = obfuscated.replace(
+    /\bhttps?:\/\/[^\s/$.?#].[^\s]*\b/g,
+    (match) => {
+      return match.replace(/./g, "*"); // Simple obfuscation
+    }
+  );
   // Obfuscate IP addresses
   obfuscated = obfuscated.replace(/\b(?:\d{1,3}\.){3}\d{1,3}\b/g, (match) => {
     return match.replace(/\d/g, "*"); // Simple obfuscation

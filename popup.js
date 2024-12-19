@@ -43,7 +43,7 @@ const obfuscateText = (text) => {
 
 document.getElementById("obfuscateButton").addEventListener("click", () => {
   const inputText = document.getElementById("inputText").value;
-  const obfuscatedText = obfuscateText(inputText);
+  const obfuscatedText = obfuscateTextX(obfuscateText(inputText));
   document.getElementById("inputText").value = obfuscatedText;
   document.getElementById("copyButton").disabled = false; // Enable copy button
   document.getElementById("status").classList.remove("show"); // Hide status initially
@@ -60,3 +60,38 @@ document.getElementById("copyButton").addEventListener("click", () => {
   // Disable copy button
   document.getElementById("copyButton").disabled = true;
 });
+
+const obfuscateTextX = (text) => {
+  // Obfuscate email addresses
+  const obfuscateEmail = (email) => {
+    const [localPart, domain] = email.split("@");
+    const obfuscatedLocalPart =
+      localPart.slice(0, 2) + "*".repeat(localPart.length - 2);
+    return `${obfuscatedLocalPart}@${domain}`;
+  };
+
+  // Obfuscate phone numbers
+  const obfuscatePhoneNumber = (phoneNumber) => {
+    return phoneNumber.replace(/\d(?=\d{4})/g, "*");
+  };
+
+  // Obfuscate names (assuming names are capitalized words)
+  const obfuscateName = (name) => {
+    return name.charAt(0) + "*".repeat(name.length - 1);
+  };
+
+  // Obfuscate place names (assuming place names are capitalized words)
+  const obfuscatePlaceName = (placeName) => {
+    return placeName.charAt(0) + "*".repeat(placeName.length - 1);
+  };
+
+  // Replace email addresses, phone numbers, names, and place names in the text
+  return text
+    .replace(
+      /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g,
+      obfuscateEmail
+    )
+    .replace(/\b\d{3}[-.\s]?\d{3}[-.\s]?\d{4}\b/g, obfuscatePhoneNumber)
+    .replace(/\b[A-Z][a-z]*\b/g, obfuscateName)
+    .replace(/\b[A-Z][a-z]*\b/g, obfuscatePlaceName);
+};

@@ -54,6 +54,11 @@
 3. **Visual Feedback**:
    - After copying, the status message will show a confirmation check icon, and the "Copy" button will be disabled until the text is obfuscated again.
 
+## In-Action:
+
+- solves a critical privacy problem for language models.
+  ![In action](/images/inaction.png "working demo")
+
 ## Future Enhancements
 
 - **Extended PII Types**: Incorporate additional types of PII for obfuscation, such as:
